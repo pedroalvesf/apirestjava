@@ -34,8 +34,6 @@ public class MedicoController {
             "nome"}) Pageable pageable) {
         var page =
         repository.findAllByAtivoTrue(pageable).map(DadosListagemMedico::new);
-        //        return repository.findAll(pageable).stream().map(DadosListagemMedico::new).toList();
-        // return without the pageable and List<>
         return ResponseEntity.ok(page);
     }
 
